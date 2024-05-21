@@ -1,0 +1,187 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #A6ACAF;
+    position: relative;
+}
+
+.title{
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 10px; /*añadimos un poco de espacio a sus lados pero que se vea mejor*/
+}
+
+.contenedor_tarea {
+    left: 190px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+    max-width: 600px; /* Cambia el valor según sea necesario */
+    padding: 35px;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    opacity: 0;
+}
+
+.contenedor_tarea.visible{
+    opacity: 1;
+}
+
+.cerrar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    font-size: 30px;
+}
+
+.btn_agregar {
+    padding: 10px;
+    font-size: 16px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn_agregar:hover {
+    background-color: #2980b9;
+}
+
+.Agregar, .Descripcion, .Fecha, .FechaEntrega {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+
+.tarea_nueva {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 10px 20px;
+    background-color: #007bff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tarea_nueva:hover {
+    background-color: #0056b3; /* Color de fondo al pasar el ratón */
+    transform: scale(1.05); /* Agranda el botón ligeramente al pasar el ratón */
+}
+
+#tasks_table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 18px;
+    text-align: left;
+    box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+}
+
+#tasks_table thead tr {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+#tasks_table th, #tasks_table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #dddddd;
+}
+
+#tasks_table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+#tasks_table tbody tr.active-row {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#tasks_table tbody tr td:last-child {
+    display: flex;
+    gap: 10px;
+}
+
+#tasks_table th, #tasks_table td {
+    text-align: center;
+}
+
+#tasks_table tbody tr td {
+    padding: 15px 10px;
+}
+
+.complete {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    /* Cambia el color de marca */
+    accent-color: #009879;
+  }
+  
+  /* Ocultar el checkbox nativo */
+input[type="checkbox"].complete {
+    /* Agrega si no estás usando autoprefixer */
+    -webkit-appearance: none;
+    appearance: none;
+    /* Para iOS < 15 para eliminar el fondo gradiente */
+    background-color: #fff;
+    /* No eliminado mediante apariencia */
+    margin: 0;
+  }
+  
+  /* Estilos personalizados para el checkbox sin marcar */
+input[type="checkbox"].complete {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+  }
+  
+  /* Estilos personalizados para el checkbox marcado */
+input[type="checkbox"].complete:checked {
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 16 16' fill='%23009879' xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3e%3c/svg%3e");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+/* Estilos para los botones de eliminar */
+.btn-eliminar {
+    background-color: #ff4b5c;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+    background-color: #ff2e3b;
+}

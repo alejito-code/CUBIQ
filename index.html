@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CUBIQ</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="title">Lista de Tareas</h1>
+    <button id="nueva_tarea" class="tarea_nueva">Nueva tarea</button>
+    <div class="table_tareas">
+        <table id="tasks_table">
+            <thead>
+                <tr>
+                    <th>Tarea</th>
+                    <th>Aréa o Materia</th>
+                    <th>Fecha de inicio</th>
+                    <th>Fecha de entrega</th>
+                    <th>Tiempo restante</th>
+                    <th>Completada</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div id="contenedor_tarea" class="contenedor_tarea">
+            <input class="Agregar" type="text" id="new-task" placeholder="Nueva tarea">
+            <input class="Descripcion" type="text" id="task-description" placeholder="Aréa o Materia">
+            <input class="Fecha" type="date" id="task-date" placeholder="Fecha de inicio">
+            <input class="FechaEntrega" type="date" id="task-due-date" placeholder="Fecha de entrega">
+            <button class="btn_agregar" id="add-task">Agregar Tarea</button>
+            <img src="img/x.png" alt="#" id="cerrar" class="cerrar">
+        </div>
+        <!--ul donde aprecera el campo elminar desde el js-->
+        <ul id="eliminar_tarea"></ul>
+    
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
